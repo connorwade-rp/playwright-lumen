@@ -1,0 +1,38 @@
+{
+  "name": "playwright-template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "intall-browsers": "playwright install",
+    "test": "playwright test /e2e",
+    "audit:check": "ts-node audits/auditor.ts",
+    "audit:perf": "ts-node audits/auditor.ts --perf",
+    "audit:access": "ts-node audits/auditor.ts --access",
+    "audit:report": "node server/app.js",
+    "test:all": "playwright test",
+    "lint": "rome check ./",
+    "lint:format": "rome format ./ --write",
+    "lint:fix": "rome check ./ --apply-suggested",
+    "server:dev": "nodemon server/app.js --ignore ./server/dist/lh-pages.json",
+    "server:debug": "DEBUG=express:* node server/app.js",
+    "prepare": "husky install"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@axe-core/playwright": "^4.5.2",
+    "@playwright/test": "^1.28.1",
+    "@types/node": "^18.11.13",
+    "husky": "^8.0.2",
+    "lighthouse": "^11.1.0",
+    "nodemon": "^3.0.1",
+    "rome": "^11.0.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.1.6"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
